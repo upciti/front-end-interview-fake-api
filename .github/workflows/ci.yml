@@ -33,16 +33,12 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run lint
-      - name: Test
-        run: npm run test
-      - name: Build the docker-compose stack
-        run: docker compose up -d --build
-      - name: Check running containers
-        run: docker ps -a
-      - name: E2E
-        run: npm run test:e2e
       - name: Build
         run: npm run build
+      - name: Test
+        run: npm run test
+      - name: E2E
+        run: npm run test:e2e
 
   build-image:
     runs-on: ubuntu-24.04
@@ -70,7 +66,7 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build app and push
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: true
