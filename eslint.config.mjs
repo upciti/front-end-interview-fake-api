@@ -1,5 +1,5 @@
-import prettierConfig from 'eslint-config-prettier';
 import js from '@eslint/js';
+import prettierConfig from 'eslint-config-prettier';
 import neostandard, { plugins, resolveIgnoresFromGitignore } from 'neostandard';
 
 /**
@@ -33,7 +33,7 @@ export default [
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-floating-promises': 'off',
-      "no-useless-constructor": "off"
+      'no-useless-constructor': 'off',
     },
   },
 ];
