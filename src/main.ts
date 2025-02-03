@@ -24,6 +24,8 @@ const bootstrap = async () => {
     .setVersion('1.0')
     .build();
 
+  app.enableCors({ origin: [process.env.FRONT_URL] });
+
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('docs', app, document);
 
