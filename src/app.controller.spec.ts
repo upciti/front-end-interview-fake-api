@@ -16,8 +16,8 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getAverageResponse()).toEqual(
+    it('should return average response', async () => {
+      expect(await appController.getAverageResponse()).toEqual(
         expect.objectContaining({
           overallHourlyAverage: expect.any(Number),
           hourlyAverages: {

@@ -14,7 +14,8 @@ export class AppController {
   })
   @ApiOperation({ summary: 'get road traffic counting hourly averages', operationId: 'data' })
   @Get('data')
-  getAverageResponse(): AverageResponse {
+  async getAverageResponse(): Promise<AverageResponse> {
+    await new Promise(resolve => setTimeout(resolve, Math.floor(Math.random() * 500)));
     return this.appService.getAverageResponse();
   }
 }
