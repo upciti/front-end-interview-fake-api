@@ -1,4 +1,4 @@
-FROM node:18.20.6-alpine3.21
+FROM node:18.20.7-alpine3.21
 
 MAINTAINER Samuel MARLHENS <samuel.marlhens@upciti.com>
 

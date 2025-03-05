@@ -3,7 +3,14 @@ module.exports = {
   target: name => {
     const targets = {
       '@types/node': 'minor',
+      /**
+       * breaking changes
+       */
       '@nestjs/*': 'minor',
+      /**
+       * v3 requires node >=20, keeping v2.x
+       */
+      'sort-package-json': 'minor',
     };
 
     const keys = Object.keys(targets);
